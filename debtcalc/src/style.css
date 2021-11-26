@@ -1,0 +1,90 @@
+* { 
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+ }
+.calcContainer{ 
+    width: 800px;
+    height: 600px; 
+    background-color: white;
+    display: flex;
+    color: white;
+    border: 2px solid black;
+  }
+
+  .userInput {
+    color: "#F1FDFF";
+    width: 50%;
+    background-color: #03045E;
+    height: 100%;
+  }
+
+  .inputHeader { 
+    margin-bottom: 50px; 
+    margin-top: 60px; 
+    text-align: center;
+
+    }
+
+  .inputFields { margin-bottom: 100px;}
+
+  .inputFields span {
+    float: left;
+    padding: 0 20px;
+    font-size: 20px;
+  }
+
+  .inputFields input {
+    width: 80%;
+    height: 50px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+
+  .submitBtn {
+    margin-left: 20px;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .submitBtn:hover{
+      background-color:#ceceff;
+      box-shadow: rgba(255, 255, 255, .3) 0px 7px 29px 0px;
+  }
+
+  .userOutput {
+    background-color: #F1FDFF;
+    height: 100%;
+    width: 50%;
+    color: #03045E;
+  } 
+
+
+  .userOutput h2 { 
+      font-size: 30px;
+      margin-bottom: 0;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+  .breakdown {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+
+  .historyHeader {
+      margin-bottom: 0;
+      margin-top: 20px;
+  }
+
+  .breakdown h4{
+    font-size: 20px;
+    font-weight: 500;
+  }
