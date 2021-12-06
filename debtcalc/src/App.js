@@ -6,10 +6,11 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <div className=" header">
-          
-          <InputComponent />
-      
+        <div className="header">
+          <div className="center">
+            <InputComponent />
+          </div>
+
         </div>
       </header>
     </div>
