@@ -72,8 +72,10 @@ class InputComponent extends React.Component {
         ((parseFloat(this.state.interestRate) * 0.01) / 12) *
         this.state.loanAmount,
       disableInput: true,
+      buttonDisabled: true
+      
     });
-    setTimeout(this.paymentLog, 500);
+    setTimeout(this.paymentLog, 100);
   };
 
   paymentLog = () => {
@@ -122,8 +124,9 @@ class InputComponent extends React.Component {
   }
 
   render() {
-    const redBorder = this.state.buttonDisabled ? "redBorder" : "";
-
+      const {paymentHistory, disableInput, loanAmount, interestRate, minimum, makePayment, buttonDisabled, interestPaid, principalPaid} = this.state;
+    const redBorder = buttonDisabled ? "redBorder" : "";
+    console.log(buttonDisabled)
     return (
       <div className="calcContainer">
         <form action="" id="userInput" className="userInput">
@@ -133,8 +136,8 @@ class InputComponent extends React.Component {
               <span>Loan Amount</span>
               <input
                 onChange={this.loan}
-                disabled={this.state.disableInput}
-                value={this.state.loanAmount}
+                disabled={disableInput}
+                value={loanAmount}
                 type="text"
               />
             </div>
@@ -142,8 +145,8 @@ class InputComponent extends React.Component {
               <span>APR %</span>
               <input
                 onChange={this.interest}
-                disabled={this.state.disableInput}
-                value={this.state.interestRate}
+                disabled={disableInput}
+                value={interestRate}
                 type="text"
               />
             </div>
@@ -152,8 +155,8 @@ class InputComponent extends React.Component {
               <input
                 className={redBorder}
                 onChange={this.paymentInput}
-                placeholder={"Min:" + this.state.minimum}
-                value={this.state.makePayment}
+                placeholder={"Min:" + minimum}
+                value={makePayment}
                 type="text"
               />
             </div>
@@ -161,7 +164,7 @@ class InputComponent extends React.Component {
           <div className="btn-container">
             <button
               className="submitBtn"
-              disabled={this.state.buttonDisabled}
+              disabled={buttonDisabled}
               onClick={this.princIntPaid}
             >
               Submit
@@ -169,15 +172,15 @@ class InputComponent extends React.Component {
             <button 
             className="submitBtn close-loan"
             onClick={this.closeOutLoan}
-            >Close Loao</button>
+            >Close Loan</button>
 
             <button className="submitBtn" onClick={this.newLoan}>New Loan</button>
           </div>
         </form>
         <OutPutComponent
-          propsInterest={this.state.interestPaid}
-          propsPrincipal={this.state.principalPaid}
-          history={this.state.paymentHistory}
+          propsInterest={interestPaid}
+          propsPrincipal={principalPaid}
+          history={paymentHistory}
         />
       </div>
     );
